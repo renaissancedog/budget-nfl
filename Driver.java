@@ -1,3 +1,4 @@
+import java.util.*;
 public class Driver {
   public static void main(String[] args) {
     Team CHI=new Team(100, "Chicago");
@@ -6,6 +7,7 @@ public class Driver {
     Team MIN=new Team(89, "Minnesota");
     Team[] teams={CHI, DET, GB, MIN};
     RoundRobin r = new RoundRobin();
-    r.generate(teams);
+    Match[][] schedule=r.generate(teams);
+    System.out.println(Arrays.toString(schedule[2]));
   } 
 }
