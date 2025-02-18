@@ -6,6 +6,6 @@ public class Team {
     name=n;
   }
   public String toString() {
-    return name;
+    return name+String.valueOf(" ("+this.ovr+" ovr)");
   }
 }

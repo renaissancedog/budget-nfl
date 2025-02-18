@@ -8,6 +8,6 @@ public class Match {
     return home;
   }
   public String toString() {
-    return home+" "+away;
+    return home+" vs "+away;
   }
 }

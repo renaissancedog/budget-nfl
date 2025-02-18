@@ -10,7 +10,6 @@ public class RoundRobin {
     for (int i=0; i<teams.length-1; i++) {
       schedule[i][0]=new Match(fixed, moving[0]);
       for (int j=1; j<=(teams.length/2)-1; j++) {
-        System.out.println(j);
         schedule[i][j]=new Match(moving[j], moving[target-j]);
       }
       Team cache=moving[moving.length-1];
