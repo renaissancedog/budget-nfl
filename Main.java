@@ -8,8 +8,11 @@ public class Main {
     Team[] teams={CHI, DET, GB, MIN};
     RoundRobin r = new RoundRobin();
     Schedule schedule=new Schedule(r.generate(teams));
+    System.out.println("========== BUDGET NFL SIMULATOR ==========");
     for (int i=0; i<teams.length-1; i++) {
-      schedule.getWeek(i);
+      money+=schedule.getWeek(i, money);
+      System.out.println("You have "+money+" dollars.");
+      System.out.println("=============================================");
     }
   } 
 }
