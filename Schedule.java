@@ -21,9 +21,9 @@ public class Schedule {
       i++;
     }
     while (true) {
-      System.out.print("Enter match (0 to skip): ");
+      System.out.print("Enter match (0 to continue): ");
       int opt=s.nextInt();
-      if (opt<1&&opt>sched[w].length) {break;}
+      if (opt<1||opt>sched[w].length) {break;}
       perMatch(opt, money); 
     }
     resolve(w); 
@@ -48,17 +48,23 @@ public class Schedule {
     System.out.println("Week "+(w+1)+" Results:");
     for (int j=0; j<sched[w].length; j++) {
       Match m=sched[w][j];
-      System.out.print(m.get(m.winner())+ " defeated "+m.get(m.loser()));
+      int winner=m.winner();
+      if (winner==1) {
+        System.out.print(m.get(winner)+ " lost to "+m.get(1-winner));
+      } else {
+        System.out.print(m.get(winner)+ " defeated "+m.get(1-winner));
+      }
       if (bets.get(j)!=null) {
         int amt=amts.get(j);
-        if (m.winner()==bets.get(j)) {
+        if (winner==bets.get(j)) {
           won+=amt;
-          System.out.println(" - won $"+amt);
+          System.out.print(" - won $"+amt);
         } else {
           won-=amt;
-          System.out.println(" - lost $"+amt);
+          System.out.print(" - lost $"+amt);
         }
       }
+      System.out.println();
     }
   }
   public void printSched() {

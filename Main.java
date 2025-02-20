@@ -3,9 +3,11 @@ public class Main {
     int money=100;
     Team CHI=new Team(100, "Chicago");
     Team DET=new Team(90, "Detroit");
-    Team GB=new Team(50, "Green Bay");
+    Team GB=new Team(72, "Green Bay");
     Team MIN=new Team(89, "Minnesota");
-    Team[] teams={CHI, DET, GB, MIN};
+    Team KC=new Team(92, "Kansas");
+    Team DEN=new Team(79, "Denver");
+    Team[] teams={CHI, DET, GB, MIN, KC, DEN};
     RoundRobin r = new RoundRobin();
     Schedule schedule=new Schedule(r.generate(teams));
     System.out.println("========== BUDGET NFL SIMULATOR ==========");
