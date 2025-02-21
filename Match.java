@@ -10,7 +10,6 @@ public class Match {
     int x=homeOvr-awayOvr;
     double rand=Math.random();
     double prob=1/(1+Math.pow(10,(-1.0*x/20))); //probability of home team winning
-    // System.out.println(rand+" l "+prob+x);
     if (rand>prob) {return 1;} else {return 0;}
   }
   public Team get(int i) {

@@ -40,6 +40,10 @@ public class Main {
     for (int i=0; i<teams.length-1; i++) {
       money+=schedule.getWeek(i, money);
       System.out.println("You have "+money+" dollars.");
+      if (money<1) {
+        System.out.println("You're bankrupt! Game Over");
+        break;
+      }
       System.out.println("=============================================");
     }
   } 
